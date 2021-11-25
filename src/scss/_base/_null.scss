@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: $select;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  // background-color: $bg-gray;
+
+  &.no-scroll {
+    overflow: hidden;
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(13%, 13%, 13%, 0.85);
+    }
+  }
+}
+
+// clears input button text field
+input::-ms-clear {
+  display: none;
+}
+
+// clears input button text field
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+// lists
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// images
+img {
+  display: block;
+  width: 100%;
+}

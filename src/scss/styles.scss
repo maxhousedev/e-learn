@@ -1,0 +1,18 @@
+@import '../scss/_base/var';
+@import '../scss/_base/colors';
+@import '../scss/_base/mixins';
+@import '../scss/_base/fonts';
+@import '../scss/_base/normalize';
+@import '../scss/_base/null';
+@import '../scss/_base/frequently-used';
+@import '../scss/_base/container';
+
+// styles
+.btn {
+  border-radius: 5px;
+  &-primary {
+    color: $white;
+    border: none;
+    background-color: $accent;
+  }
+}

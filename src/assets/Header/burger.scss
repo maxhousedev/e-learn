@@ -1,0 +1,73 @@
+@import '../../scss/_base/colors';
+@import '../../scss/_base/var';
+@import '../../scss/_base/mixins';
+
+$color-burger-line: $accent;
+$color-burger-line_active: lighten($color-burger-line, 20%);
+
+.burger {
+  display: inline-block;
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+
+  border: none;
+  background-color: transparent;
+
+  z-index: 5;
+
+  @include mq('tablet') {
+    display: none;
+  }
+
+  &.is-active {
+    z-index: 10;
+
+    & > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      transform: rotate(45deg);
+    }
+
+    & > .burger__line {
+      display: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  & > .burger__line {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    height: 2px;
+
+    background-color: $color-burger-line;
+
+    &_top {
+      width: 100%;
+
+      transform: translateY(-6px);
+    }
+
+    &_middle {
+      width: 75%;
+
+      transform: translateY(2px);
+    }
+
+    &_bottom {
+      width: 50%;
+
+      transform: translateY(10px);
+    }
+  }
+}
