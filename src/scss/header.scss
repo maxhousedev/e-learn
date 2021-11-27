@@ -1,14 +1,19 @@
-@import 'burger';
-@import '../../scss/_base/var';
-@import '../../scss/_base/mixins';
+@import './burger';
 
 .header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @include mq('laptop') {
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+
+  background-color: $background;
 }
 
 .logo {
@@ -17,12 +22,22 @@
   order: -1;
   align-items: center;
   color: $text_main_color;
-  font-size: 40px;
+
+  font-size: 2rem;
+  @include mq('tablet') {
+    font-size: 3rem;
+  }
+
   font-weight: bold;
 
   & > svg {
-    width: 50px;
-    margin-right: 15px;
+    width: 30px;
+    margin-right: 10px;
+
+    @include mq('laptop') {
+      width: 50px;
+      margin-right: 15px;
+    }
   }
 }
 
@@ -46,21 +61,27 @@
 
     background-color: $white;
 
-    outline: 1px solid red;
-
     & .navList {
       display: flex;
       flex-flow: column nowrap;
 
       &__item {
         flex: 0 0 20px;
-        margin-bottom: 1em;
+        margin-bottom: 1.5rem;
       }
     }
 
     .btnContactUs {
       margin: 0 auto;
     }
+  }
+
+  @include mq('mobile-L') {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    align-items: center;
   }
 
   @include mq('tablet') {
@@ -80,17 +101,34 @@
   flex: 1 1 auto;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
 
-  &__item {
-  }
   &__a {
-    font-size: 18px;
+    font-size: 1rem;
+    font-weight: bold;
     color: $text_main_color;
+
+    @include mq('laptop') {
+      font-size: 1.3rem;
+    }
   }
 }
 
 .btnContactUs {
   margin-left: 40px;
   padding: 10px 20px;
-  font-size: 14px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  @include mq('mobile-L') {
+    @include mq('tablet', 'max') {
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+
+  & > svg {
+    width: 20px;
+  }
 }

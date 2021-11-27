@@ -1,0 +1,126 @@
+.section-start-learning {
+  width: 320px;
+  justify-content: flex-end;
+
+  padding: 20px 30px;
+
+  @include mq('mobile-L') {
+    flex: 1 1 60%;
+    width: auto;
+  }
+
+  @include mq('laptop') {
+    flex: 1 1 60%;
+    padding-right: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+.article-start-learning {
+  position: relative;
+  width: 320px;
+  height: 330px;
+  padding: 10px;
+
+  & > svg {
+    height: 100%;
+  }
+
+  @include mq('mobile-L') {
+    flex: 0 1 320px;
+    width: auto;
+  }
+
+  @include mq('laptop') {
+    flex: 0 1 660px;
+    padding: 50px 40px 10px 0;
+  }
+
+  &__img {
+    position: absolute;
+    width: auto;
+    top: 15px;
+    // left: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    // height: 220px;
+    height: 67%;
+
+    @include mq('laptop') {
+      top: 70px;
+      left: 170px;
+      height: 525px;
+    }
+  }
+}
+
+.section-good-learning {
+  order: -1;
+  justify-content: flex-end;
+  padding: 20px 30px;
+
+  @include mq('laptop') {
+    flex: 1 1 60%;
+    padding-left: 175px;
+    padding-bottom: 130px;
+  }
+}
+
+.article-good-learning {
+  display: none;
+
+  flex: 0 1 765px;
+  position: relative;
+
+  padding: 130px 0 10px 90px;
+
+  &__img {
+    position: absolute;
+    top: 110px;
+    left: 170px;
+    height: 785px;
+    width: auto;
+  }
+}
+
+.section-learn-from-legend {
+  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 120px;
+  background-color: $background;
+
+  &__descr {
+    width: 50%;
+    margin: 2em auto 60px auto;
+    text-align: center;
+  }
+}
+
+.advantagesList {
+  display: none;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.advantageItem {
+  flex: 0 0 370px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 50px 30px;
+
+  background-color: $white;
+  border-radius: 20px;
+
+  & > svg {
+    width: 100px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__descr {
+    text-align: center;
+  }
+}

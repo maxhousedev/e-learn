@@ -1,11 +1,32 @@
-import createButton from '../../utils/Components/createAnchor';
+import phoneIcon from '../../svg/phone.svg';
+import breakpoints from '../../utils/js/breakpoints';
 
-const phonNumber = '9951234567';
+const phoneNumber = '9951234567';
 
-const ContactUs = createButton({
-  href: `tel:+7${phonNumber}`,
-  classList: ['btn', 'btn-primary', 'btnContactUs'],
-  textContent: 'Contact us',
-});
+const textContent = 'Contact us';
 
-export default ContactUs;
+export default function createContactUs() {
+  const ContactUs = document.createElement('a');
+  ContactUs.href = `tel:+7${phoneNumber}`;
+  ContactUs.classList.add('btn', 'btn-primary', 'btnContactUs');
+
+  const mediaQueryFrom = window.matchMedia(
+    `(min-width: ${breakpoints.mobileL})`
+  );
+  const mediaQueryTo = window.matchMedia(`(max-width: ${breakpoints.tablet})`);
+
+  const setInnerHTML = () => {
+    ContactUs.innerHTML = '';
+    if (mediaQueryFrom.matches && mediaQueryTo.matches) {
+      ContactUs.innerHTML = phoneIcon;
+    } else {
+      ContactUs.textContent = textContent;
+    }
+  };
+
+  setInnerHTML();
+
+  window.addEventListener('resize', setInnerHTML);
+
+  return ContactUs;
+}

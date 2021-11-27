@@ -9,10 +9,25 @@
 
 // styles
 .btn {
-  border-radius: 5px;
+  border-radius: 15px;
+
   &-primary {
     color: $white;
     border: none;
     background-color: $accent;
   }
+
+  &-secondary {
+    border-style: solid;
+    border-width: 3px;
+    border-color: $black;
+    background-color: transparent;
+  }
 }
+
+.text-color {
+  color: $text_additional_color;
+}
+
+@import './header';
+@import './main';

@@ -4,6 +4,7 @@ import createAnchor from '../../utils/Components/createAnchor';
 const LOGO_TEXT = 'Learn';
 
 const LogoAnchor = createAnchor({
+  href: '#home',
   classList: ['logo'],
   textContent: LOGO_TEXT,
 });

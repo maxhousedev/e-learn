@@ -1,7 +1,3 @@
-@import '../../scss/_base/colors';
-@import '../../scss/_base/var';
-@import '../../scss/_base/mixins';
-
 $color-burger-line: $accent;
 $color-burger-line_active: lighten($color-burger-line, 20%);
 
@@ -18,7 +14,7 @@ $color-burger-line_active: lighten($color-burger-line, 20%);
 
   z-index: 5;
 
-  @include mq('tablet') {
+  @include mq('mobile-L') {
     display: none;
   }
 
